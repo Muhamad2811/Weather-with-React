@@ -36,7 +36,7 @@ export default function Home() {
 
   useEffect(() => {
     i18n.changeLanguage(language);
-  }, [language]);
+  }, [language, i18n]);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -69,7 +69,7 @@ export default function Home() {
 
     getWeather();
     return () => controller.abort();
-  }, [place, language]);
+  }, [place, language, setOpenBackdrop]);
 
   return (
     <div
