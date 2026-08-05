@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
-function App() {
+import Container from "@mui/material/Container";
+
+import Home from "./components/ui/Home";
+import AppProvider from "./components/ui/AppProvider";
+import { useTranslation } from "react-i18next";
+
+export default function App() {
+  const { ready } = useTranslation();
+
+  if (!ready) return null;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container maxWidth="sm">
+      <AppProvider>
+        <Home />
+      </AppProvider>
+    </Container>
   );
 }
-
-export default App;
