@@ -6,10 +6,10 @@ import Select from "@mui/material/Select";
 import { useContext } from "react";
 import { useTranslation } from "react-i18next";
 
-import { PlaceContext } from "../context/Context";
+import { LocationContext } from "../context/Context";
 
 export default function BasicSelect() {
-  const [place, setPlace] = useContext(PlaceContext);
+  const [location, setLocation] = useContext(LocationContext);
 
   const handleChange = (event) => {
     setPlace(event.target.value);
