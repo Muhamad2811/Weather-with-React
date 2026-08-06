@@ -10,7 +10,7 @@ import { useEffect, useState, useContext } from "react";
 import { useTranslation } from "react-i18next";
 
 import {
-  PlaceContext,
+  LocationContext,
   BackdropContext,
   LanguageContext,
 } from "../context/Context";
@@ -21,7 +21,7 @@ import SimpleBackdrop from "./Backdrob";
 export default function Home() {
   let [data, setData] = useState({});
 
-  const place = useContext(PlaceContext)[0];
+  const location = useContext(LocationContext)[0];
   const setOpenBackdrop = useContext(BackdropContext)[1];
 
   const { t, i18n } = useTranslation();
@@ -43,7 +43,7 @@ export default function Home() {
     async function getWeather() {
       try {
         const response = await axios.get(
-          `https://api.weatherapi.com/v1/forecast.json?key=3c81262cd7464ce292881127260308&q=${place}&lang=${language}`,
+          `https://api.weatherapi.com/v1/forecast.json?key=3c81262cd7464ce292881127260308&q=${location}&lang=${language}`,
           { signal: controller.signal },
         );
         setData({
@@ -69,7 +69,7 @@ export default function Home() {
 
     getWeather();
     return () => controller.abort();
-  }, [place, language, setOpenBackdrop]);
+  }, [location, language, setOpenBackdrop]);
 
   return (
     <div
@@ -96,7 +96,7 @@ export default function Home() {
       >
         <Stack direction={"row"} sx={{ alignItems: "flex-end", gap: "20px" }}>
           <Typography gutterBottom variant="h2" component="div">
-            {t(`${place}`)}
+            {t(`${location}`)}
           </Typography>
           <Typography gutterBottom variant="h5" component="div">
             {data.date}
