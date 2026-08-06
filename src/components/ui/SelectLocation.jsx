@@ -24,13 +24,13 @@ export default function BasicSelect() {
           id="demo-simple-select-label"
           sx={{ color: "primary.main" }}
         >
-          {t("Place")}
+          {t("Location")}
         </InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value={place}
-          label="place"
+          value={location}
+          label="location"
           onChange={handleChange}
           sx={{ color: "primary.main" }}
           MenuProps={{
