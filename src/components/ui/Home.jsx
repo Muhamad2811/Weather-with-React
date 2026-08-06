@@ -14,7 +14,7 @@ import {
   BackdropContext,
   LanguageContext,
 } from "../context/Context";
-import BasicSelect from "./SelectPlace";
+import BasicSelect from "./SelectLocation";
 import BasicPopover from "./Popover";
 import SimpleBackdrop from "./Backdrob";
 
