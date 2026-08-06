@@ -12,7 +12,7 @@ export default function BasicSelect() {
   const [location, setLocation] = useContext(LocationContext);
 
   const handleChange = (event) => {
-    setPlace(event.target.value);
+    setLocation(event.target.value);
   };
 
   const { t } = useTranslation();
