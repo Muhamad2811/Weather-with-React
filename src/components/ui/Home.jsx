@@ -79,7 +79,7 @@ export default function Home() {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        alignItems: "center",
+        alignItems: "flex-end",
       }}
     >
       <SimpleBackdrop />
@@ -136,7 +136,7 @@ export default function Home() {
               </Stack>
             </Box>
             <div sx={{ width: "50%" }}>
-              <CloudIcon sx={{ fontSize: 170 }} />
+              <CloudIcon sx={{ fontSize: 160 }} />
             </div>
           </Stack>
         </CardContent>
