@@ -1,21 +1,21 @@
 import { useState } from "react";
 import {
-  PlaceContext,
+  LocationContext,
   BackdropContext,
   LanguageContext,
 } from "../context/Context";
 
 export default function AppProvider({ children }) {
-  const placeState = useState("Kirdasa");
+  const LocationState = useState("Kirdasa");
   const backdropState = useState(true);
   const languageState = useState("ar");
   return (
-    <PlaceContext.Provider value={placeState}>
+    <LocationContext.Provider value={locationState}>
       <BackdropContext.Provider value={backdropState}>
         <LanguageContext.Provider value={languageState}>
           {children}
         </LanguageContext.Provider>
       </BackdropContext.Provider>
-    </PlaceContext.Provider>
+    </LocationContext.Provider>
   );
 }
