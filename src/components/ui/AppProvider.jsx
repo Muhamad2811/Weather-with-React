@@ -6,7 +6,7 @@ import {
 } from "../context/Context";
 
 export default function AppProvider({ children }) {
-  const LocationState = useState("Kirdasa");
+  const locationState = useState("Kirdasa");
   const backdropState = useState(true);
   const languageState = useState("ar");
   return (
